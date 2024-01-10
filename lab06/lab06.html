@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript DOM</title>
+</head>
+
+<body>
+
+  <h1 id="heading">Hello World</h1>
+  <button id="btn2">Click Me</button>
+
+  <script>
+    buttonElement = document.getElementById("btn2");
+
+    buttonElement.addEventListener("click",function(){
+      headingElement.innerHTML = "Hello JavaScript";
+    });
+  </script>
+
+  <hr />
+
+  <input type="text" name="url" id="url" placeholder="Enter Url">
+  <button id="btn">Click Me</button>
+
+  <script>
+    buttonElement = document.getElementById("url");
+    buttonElement = document.getElementById("btn");
+
+    buttonElement.addEventListener("click", () => {
+      console.log(urlElement.value);
+      window.location = urlElement.value;
+    });
+  </script>
+
+  <hr />
+
+  <img
+    id="image"
+    src="https://cdn-icons-png.flaticon.com/128/2618/2618576.png"
+    alt="Image"
+  />
+  <button id="btn3">Click Me</button>
+
+  <script>
+     buttonElement = document.getElementById("btn3");
+
+     buttonElement.addEventListener("click",function(){
+        imageElement = document.getElementById("image");
+        imageElement.src =
+      
+        "https://cdn-icons-png.flaticon.com/128/2618/2618576.png";
+    });
+  </script>
+
+  <hr />
+
+  <h1 id="heading2">Hello World</h1>
+  <button id="btn4">Click Me</button>
+
+  <script>
+    buttonElement = document.getElementById("btn4");
+
+    buttonElement.addEventListener("click",function(){
+      headingElement.style.color = "red";
+      headingElement.style.backgroundColor = "black";
+      headingElement.style.fontSize = "50px";
+    });
+  </script>
+  <hr />
+
+  <style>
+        .heading{
+        color: rgb(47, 0, 255);
+        background-color: rgb(196, 199, 23);
+        font-size: 50px;
+    }
+    </style>
+
+  <h1 id="heading3">Hello World</h1>
+  <button id="btn5">Click Me</button>
+
+  <script>
+    buttonElement = document.getElementById("btn2");
+    buttonElement.addEventListener("click",function(){
+      // Change the class of the heading
+      headingElement = document.getElementById("heading3");
+      headingElement.className = "heading";
+    });
+  </script>
+
+  <hr />
+  <!--Change the innerHTML of the heading-->
+
+  <h1 id="heading4">Hello World</h1>
+  <button id="btn6">Click Me</button>
+
+  <script>
+    buttonElement = document.getElementById("btn6");
+    buttonElement.addEventListener("click",function(){
+     headingElement = document.getElementById("heading4");
+     if (headingElement.innerHTML == "Hello World"){
+     headingElement.innerHTML = "Hello JavaScript";
+     } else {
+        headingElement.innerHTML = "Hello World"
+     }
+    });
+  </script>
+</body>
+</html>
+  </script>
+  <hr />
+</body>
+</html>

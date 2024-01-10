@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Number</title>
+</head>
+
+<body>
+
+  <h1>เกมส์ทายตัวเลข</h1>
+  <p>ทายตัวเลขระหว่าง 1 ถึง 100</p>
+
+  <input type="text" id="guessField" placeholder="Guess a number" />
+  <input type="button" id="guessBtn" value="Submit guess" />
+
+  <input type="button" id="btnRestart" value="Restart" />
+
+  <div id="result"></div>
+
+  <div id="summary"></div>
+
+  <script>
+    // Generate a random number
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+    // Initialize the number of guesses
+    let numGuess = 0;
+
+    // Get the guess field element
+    const guessFieldElm = document.getElementById("guessField");
+
+    // Get the guess button element
+    const submitElm = document.querySelector("#guessBtn");
+
+    // Add an event listener to the guess button
+    submitElm.addEventListener("click", function () {
+      // Get the guess from the input field
+      const guess = guessFieldElm.value;
+
+      // Check if the guess is valid
+      if (isNaN(guess) || guess == "") {
+        // The guess is invalid
+        document.getElementById("result").innerHTML = "กรุณากรอกตัวเลข";
+        guessFieldElm.select();
+      } else {
+        // The guess is valid
+
+        // Check if the guess is correct
+        if (guess == randomNumber) {
+          // The guess is correct
+          document.getElementById("result").innerHTML = "ถูกต้อง";
+        } else if (guess > randomNumber) {
+          // The guess is too high
+          document.getElementById("result").innerHTML = "มากไป";
+        } else {
+          // The guess is too low
+          document.getElementById("result").innerHTML = "น้อยไป";
+        }
+
+        // Update the number of guesses
+        numGuess++;
+
+        // Display the number of guesses
+        numGuess++;
+        document.getElementById("summary").innerHTML =
+          "ทายไปแล้ว " + numGuess + "ครั้ง";
+      }
+    });
+
+    // Get the restart button element
+    const restartElm = document.querySelector("#btnRestart");
+
+    // Add an event listener to the restart button
+    restartElm.addEventListener("click", function () {
+      // Restart the game
+      randomNumber = Math.floor(Math.random() * 100) + 1;
+      numGuess = 0;
+
+      // Clear the guess field
+      guessFieldElm.value = "";
+
+      // Clear the result
+      document.getElementById("result").innerHTML = "";
+
+      // Clear the summary
+      document.getElementById("summary").innerHTML = "";
+    });
+  </script>
+
+</body>
+
+</html>
